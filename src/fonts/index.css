@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("BebasNeue-Bold.otf") format("otf"),
+    url("BebasNeue-Book.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: url("BebasNeue-Light.otf") format("otf"),
+    url("BebasNeue-Light.ttf") format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: url("BebasNeue-Bold.otf") format("otf"),
+    url("BebasNeue-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
