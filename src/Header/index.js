@@ -6,7 +6,7 @@ import behance from "./assets/behance.svg";
 import instagram from "./assets/instagram.svg";
 
 const Header = styled.header`
-  border-top: 1px solid;
+  padding: 4rem 0;
 `;
 
 const Wrapper = styled.div`
@@ -15,18 +15,37 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
+const Name = styled.h2`
+  position: relative;
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  line-height: 1.6rem;
+  font-size: 1.5rem;
+`;
+
 const Logo = styled.img`
-  width: 10rem;
+  position: absolute;
+  top: -15px;
+  left: -90px;
+  width: 4.5rem;
 `;
 
 const Navigation = styled.nav`
-  vertical-align: bottom;
+  padding: 1.75rem 0;
 `;
 
 const Link = styled.a`
-  margin-left: 2rem;
+  cursor: pointer;
+  position: relative;
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  line-height: 1.6rem;
+  font-size: 1.5rem;
+  margin-right: 7rem;
   color: #000;
+  text-transform: uppercase;
   text-decoration: none;
+  transition: all .15s;
 
   &:hover {
     color: #636363;
@@ -38,25 +57,28 @@ const Icon = styled.img`
   vertical-align: -4px;
 `;
 
-const About = styled.p``;
+const About = styled.p`
+  line-height: 1.25rem;
+`;
 
 export default () => (
   <Header>
     <div className="container">
-      <Wrapper>
-        <Logo src={logo} />
-        <Navigation>
-          <Link href="#">Портфолио</Link>
-          <Link href="#">Профиль</Link>
-          <Link href="#">Контакты</Link>
-          <Link href="#">
-            <Icon src={behance} />
-          </Link>
-          <Link href="#">
-            <Icon src={instagram} />
-          </Link>
-        </Navigation>
-      </Wrapper>
+      <div className="row">    
+        <div className="col-md-4">
+          <Name>
+            <Logo src={logo} />
+            ANDREY<br />OVCHINNIKOV
+          </Name>
+        </div>
+        <div className="col-md-8">
+          <Navigation>
+            <Link>portfolio</Link>
+            <Link>profile</Link>
+            <Link>contact</Link>
+          </Navigation>
+        </div>
+      </div>
       <About>
         Многопрофильный художник и дизайнер с акцентом на индивидуальный <br />
         брендинг и типографию.
