@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import logo from "./assets/AO_logo.svg";
-import behance from "./assets/behance.svg";
+import telegramm from "./assets/telegramm.svg";
 import instagram from "./assets/instagram.svg";
+import vk from "./assets/vk.svg";
+import facebook from "./assets/facebook.svg";
 
 const Header = styled.header`
   padding: 4rem 0;
@@ -11,8 +13,6 @@ const Header = styled.header`
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const Name = styled.h2`
@@ -53,8 +53,12 @@ const Link = styled.a`
 `;
 
 const Icon = styled.img`
-  width: 1.25rem;
-  vertical-align: -4px;
+  padding-right: 2rem;
+  width: 1.1rem;
+`;
+
+const Icons = styled.div`
+  padding-top: 1.75rem;
 `;
 
 const About = styled.p`
@@ -72,11 +76,19 @@ export default () => (
           </Name>
         </div>
         <div className="col-md-8">
-          <Navigation>
-            <Link>portfolio</Link>
-            <Link>profile</Link>
-            <Link>contact</Link>
-          </Navigation>
+          <Wrapper>
+            <Navigation>
+              <Link>portfolio</Link>
+              <Link>profile</Link>
+              <Link>contact</Link>
+            </Navigation>
+            <Icons>
+              <Icon src={facebook} />
+              <Icon src={vk} />
+              <Icon src={telegramm} />
+              <Icon src={instagram} />
+            </Icons>
+          </Wrapper>
         </div>
       </div>
       <About>
