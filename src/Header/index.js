@@ -8,30 +8,27 @@ import vk from "./assets/vk.svg";
 import facebook from "./assets/facebook.svg";
 
 const Header = styled.header`
-  padding: 4rem 0;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
+  padding: 4rem 0 3rem 0;
 `;
 
 const Name = styled.h2`
   position: relative;
   font-family: "Bebas Neue";
   font-weight: bold;
-  line-height: 1.6rem;
-  font-size: 1.5rem;
+  line-height: 2rem;
+  font-size: 1.875rem;
 `;
 
 const Logo = styled.img`
   position: absolute;
-  top: -15px;
-  left: -90px;
-  width: 4.5rem;
+  top: -16px;
+  left: -110px;
+  width: 5.7rem;
 `;
 
 const Navigation = styled.nav`
-  padding: 1.75rem 0;
+  display: flex;  
+  padding: 2.5rem 0;
 `;
 
 const Link = styled.a`
@@ -40,7 +37,7 @@ const Link = styled.a`
   font-family: "Bebas Neue";
   font-weight: bold;
   line-height: 1.6rem;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   margin-right: 7rem;
   color: #000;
   text-transform: uppercase;
@@ -53,16 +50,12 @@ const Link = styled.a`
 `;
 
 const Icon = styled.img`
-  padding-right: 2rem;
-  width: 1.1rem;
+  padding-left: 1.5rem;
+  width: 1.35rem;
 `;
 
 const Icons = styled.div`
-  padding-top: 1.75rem;
-`;
-
-const About = styled.p`
-  line-height: 1.25rem;
+  
 `;
 
 export default () => (
@@ -75,26 +68,25 @@ export default () => (
             ANDREY<br />OVCHINNIKOV
           </Name>
         </div>
-        <div className="col-md-8">
-          <Wrapper>
-            <Navigation>
-              <Link>portfolio</Link>
-              <Link>profile</Link>
-              <Link>contact</Link>
-            </Navigation>
+        <div className="col-md-4">
+          <Navigation>
+            <Link>portfolio</Link>
+            <Link>profile</Link>
+          </Navigation>
+        </div>
+        <div className="col-md-4">
+          <Navigation>
+            <Link>contact</Link>
             <Icons>
               <Icon src={facebook} />
               <Icon src={vk} />
               <Icon src={telegramm} />
               <Icon src={instagram} />
             </Icons>
-          </Wrapper>
+          </Navigation>
         </div>
       </div>
-      <About>
-        Многопрофильный художник и дизайнер с акцентом на индивидуальный <br />
-        брендинг и типографию.
-      </About>
+      
     </div>
   </Header>
 );
