@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
 const Wrapper = styled.div`
-  padding: 15px 0px;
+  padding: 1rem 0px;
 `;
 
-const Card = styled.a`
+const Card = styled(Link)`
   display: block;
   cursor: pointer;
   background-size: cover;
@@ -41,7 +42,7 @@ const Title = styled.h2`
 
 export default ({ id }) => (
   <Wrapper>
-    <Card id={id}>
+    <Card to={`/posts/${id}`} id={id}>
       <Back>
         <Title>Логотип</Title>
       </Back>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import logo from "./assets/AO_logo.svg";
 import telegramm from "./assets/telegramm.svg";
@@ -21,6 +22,7 @@ const Name = styled.h2`
   font-weight: bold;
   line-height: 2rem;
   font-size: 1.875rem;
+  color: #000;
 `;
 
 const Logo = styled.img`
@@ -32,7 +34,7 @@ const Navigation = styled.nav`
   padding: 2.5rem 0;
 `;
 
-const Link = styled.a`
+const Nav = styled.a`
   cursor: pointer;
   position: relative;
   font-family: "Bebas Neue";
@@ -64,20 +66,22 @@ export default () => (
     <div className="container">
       <div className="row">    
         <div className="col-md-4">
-          <Logo src={logo} />
-          <Name>
-            ANDREI<br />OVCHINNIKOV
-          </Name>
+          <Link to="/">
+            <Logo src={logo} />
+            <Name>
+              ANDREI<br />OVCHINNIKOV
+            </Name>
+          </Link>
         </div>
         <div className="col-md-4">
           <Navigation>
-            <Link>portfolio</Link>
-            <Link>profile</Link>
+            <Nav>portfolio</Nav>
+            <Nav>profile</Nav>
           </Navigation>
         </div>
         <div className="col-md-4">
           <Navigation>
-            <Link>contact</Link>
+            <Nav>contact</Nav>
             <Icons>
               <Icon src={facebook} />
               <Icon src={vk} />
