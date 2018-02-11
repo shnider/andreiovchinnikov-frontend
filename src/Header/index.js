@@ -12,7 +12,11 @@ const Header = styled.header`
 `;
 
 const Name = styled.h2`
-  position: relative;
+  display: inline-block;
+  vertical-align: 18px;
+  margin: 0;
+  padding-left: 1.1rem;
+  display: inline-block;
   font-family: "Bebas Neue";
   font-weight: bold;
   line-height: 2rem;
@@ -20,9 +24,6 @@ const Name = styled.h2`
 `;
 
 const Logo = styled.img`
-  position: absolute;
-  top: -16px;
-  left: -110px;
   width: 5.7rem;
 `;
 
@@ -63,9 +64,9 @@ export default () => (
     <div className="container">
       <div className="row">    
         <div className="col-md-4">
+          <Logo src={logo} />
           <Name>
-            <Logo src={logo} />
-            ANDREY<br />OVCHINNIKOV
+            ANDREI<br />OVCHINNIKOV
           </Name>
         </div>
         <div className="col-md-4">

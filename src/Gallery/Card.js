@@ -3,24 +3,48 @@ import styled from "styled-components";
 
 const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
-const Image = styled.img`
+const Wrapper = styled.div`
+  padding: 15px 0px;
+`;
+
+const Card = styled.a`
+  display: block;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  background-image: url(${props => `${PUBLIC_URL}/image/card-image-${props.id}.jpg`});
+  color: white;  
+  text-decoration: none;
+`;
+
+const Back = styled.span`
+  opacity: 0;
+  display: flex;
+  background-color: rgba(6,6,6,0.85);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  transition: all .15s ease-in-out 0s;
 
   &:hover {
-    box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
+    opacity: 1;
   }
 `;
 
-const Wrapper = styled.div`
-  cursor: pointer;
-  padding: 15px 0px;
+const Title = styled.h2`
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: normal;
 `;
 
 export default ({ id }) => (
   <Wrapper>
-    <Image src={`${PUBLIC_URL}/image/card-image-${id}.jpg`} />
+    <Card id={id}>
+      <Back>
+        <Title>Логотип</Title>
+      </Back>
+    </Card>
   </Wrapper>
 );
-
