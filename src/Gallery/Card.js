@@ -5,7 +5,7 @@ import styled from "styled-components";
 const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
 const Wrapper = styled.div`
-  padding: 1rem 0px;
+  padding: 1rem 0;
 `;
 
 const Card = styled(Link)`

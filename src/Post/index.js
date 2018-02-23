@@ -13,7 +13,7 @@ const Image = styled.img`
 `;
 
 const TextWrapper = styled.div`
-  padding-left: 1rem;
+  padding-left: 0.7rem;
 `;
 
 const Heading = styled.h2`
