@@ -9,5 +9,6 @@ module.exports = {
   rules: {
     strict: 0,
     'react/jsx-filename-extension': 0, 
+    'jsx-a11y/anchor-is-valid': 0
   },
 };
