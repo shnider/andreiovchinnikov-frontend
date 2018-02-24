@@ -45,6 +45,7 @@ const Nav = styled(Link)`
     color: #636363;
     border-bottom: ${({ isActive }) => isActive ? "4px solid #636363" : "none"};
   }
+  
   &:active {
     transform: scale(0.97);
   }

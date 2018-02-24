@@ -11,7 +11,7 @@ const App = () => (
   <Router>
     <div>
       <Header />
-      <Redirect exact from="/" to="/portfolio" />
+      <Redirect exact from="/" to="/profile" />
       <Route exact path="/portfolio" component={Gallery} />
       <Route path="/profile" component={Profile} />
       <Route path="/posts/:id" component={Post} />
