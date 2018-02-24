@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import logo from "./assets/AO_logo.svg";
 
-const Header = styled.header`
+const Wrapper = styled.header`
   padding: 4rem 0 3rem 0;
 `;
 
@@ -30,20 +31,22 @@ const Navigation = styled.nav`
   padding: 2rem 0;
 `;
 
-const Nav = styled.a`
-  cursor: pointer;
-  position: relative;
+const Nav = styled(Link)`
+  margin-right: 7rem;
+  border-bottom: ${({ isActive }) => isActive ? "4px solid #000" : "none"};
   font-family: "Bebas Neue";
   font-weight: bold;
   font-size: 1.875rem;
-  margin-right: 7rem;
   color: #000;
-  text-transform: uppercase;
   text-decoration: none;
   transition: all .15s;
 
   &:hover {
     color: #636363;
+    border-bottom: ${({ isActive }) => isActive ? "4px solid #636363" : "none"};
+  }
+  &:active {
+    transform: scale(0.97);
   }
 `;
 
@@ -57,14 +60,12 @@ const Svg = styled.svg`
   }
 `;
 
-
-
-export default () => (
-  <Header>
+const Header = ({ location: { pathname } }) => (
+  <Wrapper>
     <div className="container">
       <div className="row">    
         <div className="col-md-4">
-          <Link to="/">
+          <Link to="/portfolio">
             <Logo src={logo} />
             <Name>
               ANDREI<br />OVCHINNIKOV
@@ -73,13 +74,28 @@ export default () => (
         </div>
         <div className="col-md-4">
           <Navigation>
-            <Nav>portfolio</Nav>
-            <Nav>profile</Nav>
+            <Nav
+              isActive={pathname === "/portfolio"}
+              to="/portfolio"
+            >
+              portfolio
+            </Nav>
+            <Nav
+              isActive={pathname === "/profile"}
+              to="/profile"
+            >
+              profile
+            </Nav>
           </Navigation>
         </div>
         <div className="col-md-4">
           <Navigation>
-            <Nav>contact</Nav>
+            <Nav
+              isActive={pathname === "/contact"}
+              to="/contact"
+            >
+              contact
+            </Nav>
             <div>
               <a href="https://ru-ru.facebook.com">
                 <Svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></Svg>
@@ -99,5 +115,13 @@ export default () => (
       </div>
       
     </div>
-  </Header>
+  </Wrapper>
 );
+
+Header.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+}
+
+export default withRouter(Header);
