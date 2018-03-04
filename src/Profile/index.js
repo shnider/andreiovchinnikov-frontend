@@ -18,8 +18,7 @@ const About = styled.p`
 `;
 
 const TextWrapper = styled.div`
-  padding: 0 2rem;
-  border-left: ${({ isBorder }) => isBorder ? "2px solid #000" : "none"};
+  padding: ${({ isLeft }) => isLeft ? "0 0 0 0.7rem" : "0"}
 `;
 
 const SkillsList = styled.dl`
@@ -32,14 +31,13 @@ const Skill = styled.dt`
 
 const Description = styled.dd`
   flex-basis: 90%;
-  color: #636363;
 `;
 
 export default () => (
   <div className="container">
     <Photo src={`${PUBLIC_URL}/image/hero.jpg`} />
     <div className="row">
-      <div className="col-md-7">
+      <div className="col-md-6">
         <TextWrapper>
           <Heading>
             Профиль
@@ -57,8 +55,8 @@ export default () => (
           </About>
         </TextWrapper>
       </div>
-      <div className="col-md-5">
-        <TextWrapper isBorder>
+      <div className="col-md-6">
+        <TextWrapper isLeft>
           <Heading>
             Навыки
           </Heading>
