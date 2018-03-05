@@ -2,21 +2,14 @@ import React from "react";
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
 
-import logo from "./assets/AO_logo_white.svg";
-
 const Footer = styled.footer`
   padding: 2rem 0;
   background-color: #000;
 `;
 
-const Logo = styled.img`
-  width: 3.5rem;
-  height: 3.5rem;
-`;
-
 const Wrapper = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 `;
 
 const Credentials = styled.p`
@@ -40,7 +33,7 @@ export default () => (
   <Footer>
     <div className="container">
       <Wrapper>
-        <Logo src={logo} />
+
         <Credentials>
           <Social>
             <a href="https://ru-ru.facebook.com">

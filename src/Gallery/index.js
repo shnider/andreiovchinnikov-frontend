@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+// import Tags from "./Tags"
 import Card from "./Card";
 
 const Gallery = styled.section`
