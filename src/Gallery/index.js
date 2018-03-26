@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// import Tags from "./Tags"
+import Tags from "./Tags"
 import Card from "./Card";
 
 const Gallery = styled.section`
@@ -11,6 +11,7 @@ const Gallery = styled.section`
 export default () => (
   <Gallery>
     <div className="container">
+      <Tags />
       <div className="row">
         <div className="col-md-4">
           <Card id="1" />

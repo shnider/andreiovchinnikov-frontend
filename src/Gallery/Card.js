@@ -20,13 +20,14 @@ const Card = styled(Link)`
   text-decoration: none;
 `;
 
-const Back = styled.span`
-  opacity: 0;
+const Back = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
   background-color: rgba(6,6,6,0.85);
   width: 100%;
   height: 100%;
-  align-items: center;
   transition: all .15s ease-in-out 0s;
 
   &:hover {
@@ -35,16 +36,24 @@ const Back = styled.span`
 `;
 
 const Title = styled.h2`
+  font-family: "Bebas Neue";
   margin: 0 auto;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.2rem;
+`;
+
+const Description = styled.p`
+  font-size: .8rem;
+  margin: .3rem 0;
 `;
 
 export default ({ id }) => (
   <Wrapper>
     <Card to={`/posts/${id}`} id={id}>
       <Back>
-        <Title>Логотип</Title>
+        <div>
+          <Title>Wazzup dance studio</Title>
+          <Description>Шрифтовой мюрал в танцвальной студии</Description>
+        </div>
       </Back>
     </Card>
   </Wrapper>

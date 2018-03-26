@@ -7,6 +7,8 @@ const Photo = styled.img`
   margin: 0 auto;
   padding-bottom: 3rem;
   width: 100%;
+  height: 500px;
+  object-fit: cover;
 `;
 
 const Heading = styled.h2`

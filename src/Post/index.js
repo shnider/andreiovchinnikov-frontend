@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import post1 from "../image/1.jpg";
-import post2 from "../image/2.jpg";
-
 const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
 const Image = styled.img`
@@ -13,11 +10,11 @@ const Image = styled.img`
 `;
 
 const TextWrapper = styled.div`
-  padding-left: 0.7rem;
+  padding: 0 0 4rem 0;
 `;
 
 const Heading = styled.h2`
-  margin-top: 0;
+  margin-top: 5rem;
   font-family: "Bebas Neue";
   font-weight: bold;
   line-height: 0.85;
@@ -25,35 +22,32 @@ const Heading = styled.h2`
 `;
 
 const Description = styled.p`
-  text-indent: 2rem;
+  
 `;
 
 const PostImage = styled.img`
-  padding: 3rem .5rem 2rem .5rem;
   width: 100%;
   height: 100%;
 `;
 
+const mockPosts = [1, 2, 3, 4, 5, 6, 7, 8];
+
 export default ({ match }) => (
   <div className="container">
+    <div>
+      <Image src={`${PUBLIC_URL}/image/card-image-${match.params.id}.jpg`} />
+    </div>
     <div className="row">
-      <div className="col-md-6">
-        <Image src={`${PUBLIC_URL}/image/card-image-${match.params.id}.jpg`} />
-      </div>
-      <div className="col-md-6">
+      
+      <div className="col-md-offset-1 col-md-8">
         <TextWrapper>
-          <Heading>lalalalal</Heading>
+          <Heading>Wazzup dance studio</Heading>
           <Description>
-          Присылай нам фото, картинку или иллюстрацию,а мы добавим к ним каллиграфию или нарисуем надпись на твой вкус. Затем картинка вместе с буквами будет доработана в Фотошопе и отправлена на печать.
-  Ты получишь свое изображение натянутым на холст и готовым быть подаренным или повешенным на стену.
-  Слова, цитаты из книг или песен, интересные или красивые высказывания отлично могут дополнить изображение. Добавить картинке настроение и атмосферу или рассказать историю. 
-  В альбомах группы можно посмотреть готовые работы. 
-  Если возникнут вопросы или предложения - обращайся к администратору сообщества.
+          Шрифтовой мюрал в танцвальной студии
           </Description>
         </TextWrapper>
       </div>
-      <PostImage src={post1} />
-      <PostImage src={post2} />
+      {mockPosts.map(id => <PostImage src={`${PUBLIC_URL}/image/post/${id}.jpg`} />)}
     </div>
   </div>
 );

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "BebasNeue";
   src: url("BebasNeue-Bold.otf") format("otf"),
     url("BebasNeue-Book.ttf") format("truetype");
@@ -17,6 +17,15 @@
   src: url("BebasNeue-Bold.otf") format("otf"),
     url("BebasNeue-Bold.ttf") format("truetype");
   font-weight: bold;
+} */
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Bold'), local('BebasNeueBold'),
+      url('BebasNeueBold.woff2') format('woff2'),
+      url('BebasNeueBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
